@@ -1,0 +1,23 @@
+name: CI Workflow
+on:
+push:
+branches:[main]
+pull_request:
+branches:[main]
+[200~jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Run CI test verification
+        run: |
+          echo "Running continuous integration tests for -cdd-git-lab..."
+          python -c "print('CI workflow excecuted succsfully by preetham')"
