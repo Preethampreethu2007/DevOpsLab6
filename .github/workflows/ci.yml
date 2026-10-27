@@ -1,10 +1,13 @@
+
 name: CI Workflow
+
 on:
-push:
-branches:[main]
-pull_request:
-branches:[main]
-[200~jobs:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
   build:
     runs-on: ubuntu-latest
 
@@ -20,4 +23,4 @@ branches:[main]
       - name: Run CI test verification
         run: |
           echo "Running continuous integration tests for -cdd-git-lab..."
-          python -c "print('CI workflow excecuted succsfully by preetham')"
+          python -c "print('CI workflow executed successfully by preetham')"
